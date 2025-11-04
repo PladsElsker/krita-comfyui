@@ -13,7 +13,7 @@ An idiomatic plugin does not require dependencies that can be made optional. For
   - [ ] The only required dependency is to have a ComfyUI server open and accessible somewhere
   - [ ] As little patching and highjacking as realistically possible on top of ComfyUI
   - [ ] ComfyUI live previews work when running a workow
-  - [ ] Custom nodes are used for interacting with Krita:
+  - Custom nodes are used for interacting with Krita:
     - [ ] KritaLayerSet node: select which layers to composite in Krita before sending as an image to ComfyUI
     - [ ] KritaActiveSelection node: get the active selection mask
     - [ ] KritaCreateLayer node: send the image back to Krita to a given location in the layer tree
