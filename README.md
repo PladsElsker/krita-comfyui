@@ -3,7 +3,9 @@
 ## Why another krita plugin? 
 All the existing plugins that attempt to integrate ComfyUI in Krita do both too much and too little.  
 
-An idiomatic plugin does not require dependencies that can be made optional. For users that are familiar with either ComfyUI or Krita, it shouldn't feel like you have to give up on anything to use the plugin. 
+An idiomatic plugin:
+- Does not require dependencies that can be made optional
+- Does not take away features that were granted in either Krita or ComfyUI
 
 ## Scope of the project
 The extension features are clear and unambiguous: 
