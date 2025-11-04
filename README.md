@@ -9,7 +9,7 @@ An idiomatic plugin does not require dependencies that can be made optional. For
 - This Krita plugin is primarily developped by me and for me
 - If you find it useful, by all means use it as well
 - The extension features are clear and unambiguous: 
-  - ComfyUI's UI must be integrated in a Krita docker
+  - [ ] ComfyUI's UI must be integrated in a Krita docker
   - The only required dependency is to have a ComfyUI server open and accessible somewhere
   - As little patching and highjacking as realistically possible on top of ComfyUI
   - ComfyUI live previews work when running a workow
