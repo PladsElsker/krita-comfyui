@@ -11,6 +11,7 @@ This project is in active development.
 - [ ] Exposes the necessary Krita operations through a websocket client
 - [ ] Dynamically updates the workflow inputs in Krita based on the opened workflow in ComfyUI
 - [ ] Selects which ComfyUI client to interact with
+- [ ] Allows users to select a set of list of layers to composite before sending as workflow input
 
 ### ComfyUI
 - [ ] Exposes the currently opened workflow in the UI
