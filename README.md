@@ -12,6 +12,7 @@ This extension is in active development.
 - [ ] Dynamically update the workflow inputs in Krita based on the opened workflow in ComfyUI
 
 ### ComfyUI
+- [ ] Expose the currently opened workflow in the UI
 - [ ] `KritaInstance`: selects which Krita instance to interact with
 - [ ] `KritaLayerSet`: composites selected Krita layers and sends them as a single image to ComfyUI
 - [ ] `KritaActiveSelection`: retrieves the active selection mask
