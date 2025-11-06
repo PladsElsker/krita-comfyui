@@ -8,7 +8,7 @@ This extension is in active development.
 ### Krita
 - [x] Requires only a running and accessible ComfyUI server
 - [ ] Embed ComfyUI’s UI in a Krita docker
-- [x] Minimize patching and highjacking of ComfyUI internals
+- [x] Minimize patching and hijacking of ComfyUI internals
 - [ ] Enable live ComfyUI previews when running a workflow from Krita
 - [ ] Parse dynamic workflow inputs from the selected ComfyUI workflow
 - [ ] Add a custom **Layer Set Selector** component to choose which layers to composite before sending to ComfyUI
