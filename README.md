@@ -11,7 +11,7 @@ This extension is in active development.
 - [x] Minimize patching and highjacking of ComfyUI internals
 - [ ] Enable live ComfyUI previews when running a workflow from Krita
 - [ ] Parse dynamic workflow inputs from the selected ComfyUI workflow
-- [ ] Implement a custom "layer-set selector" component to select the set of layers to composite before sending to ComfyUI
+- [ ] Add a custom **Layer Set Selector** component to choose which layers to composite before sending to ComfyUI
 
 ### ComfyUI
 Custom nodes are used for interacting with Krita:
