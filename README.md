@@ -15,7 +15,7 @@ This extension is in active development.
 
 ### ComfyUI
 Custom nodes for Krita interaction:
-- [ ] `KritaLayerSet`: composites selected layers in Krita before sending them as an image to ComfyUI
+- [ ] `KritaLayerSet`: composites selected Krita layers and sends them as a single image to ComfyUI
 - [ ] `KritaActiveSelection`: retrieves the active selection mask
 - [ ] `KritaCreateLayer`: sends the generated image back to a specified location in Krita’s layer tree
 
