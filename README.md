@@ -4,7 +4,7 @@
 ### Krita
 - [x] The only required dependency for the user is to have a ComfyUI server open and accessible
 - [ ] ComfyUI's UI must be integrated in a docker
-- [ ] As little patching and highjacking as realistically possible on top of ComfyUI
+- [x] As little patching and highjacking as realistically possible on top of ComfyUI
 - [ ] ComfyUI live previews work when running a workow from Krita
 - [ ] Dynamic workflow inputs that are parsed from the selected ComfyUI workflow
 - [ ] Custom "layer-set selector" component to select the set of layers to composite before sending to ComfyUI
