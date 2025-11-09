@@ -205,3 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Published stuff
+comfyui.zip
+pykrita/comfyui/vendor/

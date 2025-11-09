@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "launch-krita",
+            "type": "shell",
+            "command": "Start-Process 'C:\\Program Files\\Krita (x64)\\bin\\krita.exe'",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Remote Attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "127.0.0.1",
+                "port": 5678
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/pykrita/comfyui",
+                    "remoteRoot": "C:\\Users\\Plads\\AppData\\Roaming\\krita\\pykrita\\comfyui"
+                }
+            ]
+        },
+        {
+            "name": "Export Project",
+            "type": "debugpy",
+            "python": "${cwd}/venv/Scripts/python",
+            "request": "launch",
+            "program": "${cwd}/export.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
