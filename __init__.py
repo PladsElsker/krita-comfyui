@@ -36,21 +36,12 @@ class KritaSaveImage(io.ComfyNode):
             category="krita",
             is_output_node=True,
             inputs=[
-                io.Image.Input(
-                    id="image", 
-                    display_name="image"
-                ),
                 KritaDocumentId.Input(
                     id="krita document"
                 ),
-                io.Combo.Input(
-                    id="position",
-                    options=["Top"],
-                    display_name="position",
-                    optional=False,
-                    tooltip="Select the position where the image will be saved to in the layers docker.",
-                    lazy=True,
-                    default="Top",
+                io.Image.Input(
+                    id="image", 
+                    display_name="image"
                 ),
             ],
         )

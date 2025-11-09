@@ -1,3 +1,4 @@
+import asyncio
 import re
 import inspect
 from typing import Dict
@@ -5,6 +6,9 @@ from typing import Dict
 from server import PromptServer
 
 from .models import KritaDocuments, UpdateKritaWorkflowRequest
+
+
+STALE_SIDS_PRUNING_REFRESH_RATE = 3
 
 
 def prune_sids(f):
@@ -59,21 +63,6 @@ class KritaApi:
         for sid in sids:
             await PromptServer.instance.send("krita::workflow::update", update_workflow_request.model_dump(), sid)
 
-    def unregister_documents_by_sid_deferred(self, sid) -> None:
-        if sid in self.registered_documents.keys():
-            del self.registered_documents[sid]
-
-        krita_documents = self.get_registered_documents().model_dump()
-        task = PromptServer.instance.send("krita::documents::update", krita_documents)
-        PromptServer.instance.loop.create_task(task)
-
-    async def unregister_documents_by_sid_deferred_async(self, sid) -> None:
-        if sid in self.registered_documents.keys():
-            del self.registered_documents[sid]
-
-        krita_documents = self.get_registered_documents().model_dump()
-        await PromptServer.instance.send("krita::documents::update", krita_documents)
-
     def get_registered_documents(self) -> KritaDocuments:
         return KritaDocuments(documents=sorted([
             document_id
@@ -81,15 +70,26 @@ class KritaApi:
             for document_id in document_set
         ]))
 
-    def _prune_stale_sids(self):
-        for sid in list(self.registered_documents.keys()):
-            if sid not in PromptServer.instance.sockets:
-                self.unregister_documents_by_sid_deferred(sid)
-
     async def prune_stale_sids_async(self):
         for sid in list(self.registered_documents.keys()):
             if sid not in PromptServer.instance.sockets.keys():
-                await self.unregister_documents_by_sid_deferred_async(sid)
+                del self.registered_documents[sid]
+
+        krita_documents = self.get_registered_documents().model_dump()
+        await PromptServer.instance.send("krita::documents::update", krita_documents)
+
+    def _prune_stale_sids(self):
+        for sid in list(self.registered_documents.keys()):
+            if sid not in PromptServer.instance.sockets:
+                del self.registered_documents[sid]
+
+        krita_documents = self.get_registered_documents().model_dump()
+        task = PromptServer.instance.send("krita::documents::update", krita_documents)
+        PromptServer.instance.loop.create_task(task)
+
+    async def _unregister_documents_by_sid_async(self, sid) -> None:
+        if sid in self.registered_documents.keys():
+            del self.registered_documents[sid]
 
 
 def _ensure_unique_id(document_id, registered_documents) -> str:
