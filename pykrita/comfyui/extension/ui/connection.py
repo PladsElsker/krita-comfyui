@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
     QPushButton
 )
-from PyQt5.QtCore import Qt, qDebug, qCritical
+from PyQt5.QtCore import Qt, qCritical
 
 from ..config import Config
 from ..comfy_websocket import ComfyWebsocket
@@ -95,6 +95,3 @@ class ComfyUIWebsocketConnectionDialog(QDialog):
         self.connect_button.setEnabled(True)
         self.status_label.setText("Connecting...")
         self.status_label.setStyleSheet(DEFAULT_COLOR_STYLE)
-
-    def get_url(self):
-        return self.url_edit.text().strip()
