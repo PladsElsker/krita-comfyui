@@ -78,10 +78,7 @@ class ComfyWebsocket(QObject):
         payload = json.dumps(data) if data is not None else None
         resp = requests.request(method, url, data=payload, headers=headers, timeout=timeout)
         resp.raise_for_status()
-        try:
-            return resp.json()
-        except Exception:
-            return resp.text
+        return resp.text
 
     def _on_open(self, ws):
         QMetaObject.invokeMethod(self, "_emit_open", Qt.ConnectionType.QueuedConnection)

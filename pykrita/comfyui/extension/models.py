@@ -10,6 +10,7 @@ class StatusRequest(BaseModel):
 class Node(BaseModel):
     id: int
     type: str
+    name: str
 
 
 class PrunedKritaWorkflow(BaseModel):
@@ -25,3 +26,7 @@ class UpdateKritaWorkflowRequest(BaseModel):
 
 class UpdateKritaDocumentsRequest(BaseModel):
     documents: List[str]
+
+
+class DocumentMappingResponse(BaseModel):
+    mapping: Dict[str, str]
