@@ -1,5 +1,5 @@
 # Krita integration in ComfyUI
-Minimal Krita extension and ComfyUI custom nodes for integrating both together. 
+Minimal Krita extension and ComfyUI custom nodes for integrating both UIs together. 
 
 ## ⚠️ WIP
 This project is in active development. 
